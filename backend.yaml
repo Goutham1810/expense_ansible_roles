@@ -1,5 +1,8 @@
 - name: Configuration of Backend services
   hosts: backend
   become: yes
+  roles:
+  - backend
+
 
     
