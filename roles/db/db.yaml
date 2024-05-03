@@ -1,0 +1,3 @@
+- name: Configuring the DB Server
+  hosts: db
+  become: yes
