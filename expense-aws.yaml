@@ -2,7 +2,6 @@
   hosts: localhost
   vars:
     zone: somustack.online
-
   tasks:
   - name: Create EC2 instances
     amanzon.aws.ec2_instance:
@@ -16,6 +15,3 @@
     - db
     - backend
     - frontend
-
-- name: Create Route53 Records
-  amazon.aws.route53:
