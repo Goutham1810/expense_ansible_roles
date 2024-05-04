@@ -1,0 +1,21 @@
+- name: Create EC2 Servers and Update Rout53 Records
+  hosts: localhost
+  vars:
+    zone: somustack.online
+
+  tasks:
+  - name: Create EC2 instances
+    amanzon.aws.ec2_instance:
+      instance_type: t2.micro
+      name: "{{ item }}"
+      security_group: allow-all # this is what i created under security groups
+      image_id: ami-090252cbe067a9e58
+      tags:
+        Name: "{{ item }}"
+    loop:
+    - db
+    - backend
+    - frontend
+
+- name: Create Route53 Records
+  amazon.aws.route53:
