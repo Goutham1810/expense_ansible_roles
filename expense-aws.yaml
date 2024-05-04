@@ -4,7 +4,7 @@
     zone: somustack.online
   tasks:
   - name: Create EC2 instances
-    amanzon.aws.ec2_instance:
+    amazon.aws.ec2_instance:
       instance_type: t2.micro
       name: "{{ item }}"
       security_group: allow-all # this is what i created under security groups
