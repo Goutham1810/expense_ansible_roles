@@ -26,6 +26,10 @@
     ansible.builtin.debug:
       msg: "The Output : {{ ec2_instances_info }}"
       msg: "{{ zone }}. {{item}}"
+    loop:
+    - db
+    - frontend
+    - backend
 
 
   # - name: create Route53 records
