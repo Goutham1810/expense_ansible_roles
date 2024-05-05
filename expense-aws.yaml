@@ -26,7 +26,7 @@
     ansible.builtin.debug:
       msg: "The Output : {{ ec2_instances_info }}"
   
-  - name : To identify the varibale type
+  - name: To identify the varibale type
     ansible.builtin.type_debug:
       msg: " The variable type : {{ ec2_instances_info | type_debug }}"
 
