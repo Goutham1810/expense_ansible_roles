@@ -25,17 +25,18 @@
   - name: print output
     ansible.builtin.debug:
       msg: "The Output : {{ ec2_instances_info }}"
+      msg: "{{ zone }}"
 
 
-  - name: create Route53 records
-    amazon.aws.route53:
-       state: present
-      zone: " {{ zone }}"
-      record: " {{ item }}.{{ zone }}"
-      type: A
-      value: "{{ item.instances.private_ip_address }}"
-      overwrite: true
-      ttl: 1
-    loop: "{{ ec2_instances_info.results }}"
+  # - name: create Route53 records
+  #   amazon.aws.route53:
+  #      state: present
+  #     zone: " {{ zone }}"
+  #     record: " {{ item }}.{{ zone }}"
+  #     type: A
+  #     value: "{{ item.instances.private_ip_address }}"
+  #     overwrite: true
+  #     ttl: 1
+  #   loop: "{{ ec2_instances_info.results }}"
 
        
