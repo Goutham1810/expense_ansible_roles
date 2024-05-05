@@ -22,6 +22,8 @@
     tasks_from: app-pre-task
 
 - name: Download the libraries of the project
+  tags:
+    - deployment
   ansible.builtin.command: npm install
   args:
     chdir: /app
