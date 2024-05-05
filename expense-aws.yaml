@@ -28,7 +28,7 @@
   
   - name: To identify the varibale type
     ansible.builtin.type_debug:
-      msg: " The variable type : {{ ec2_instances_info | type_debug }}"
+      msg: " The variable type : {{ ec2_instances_info|type_debug }}"
 
       
   # - name: create Route53 records
