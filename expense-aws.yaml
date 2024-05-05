@@ -7,10 +7,6 @@
   hosts: localhost
   vars:
     zone: somustack.online
-    instances:
-    - db
-    - frontend
-    - backend
   tasks:
   - name: create ec2 instances
     amazon.aws.ec2_instance:
@@ -20,8 +16,11 @@
       image_id: ami-090252cbe067a9e58
       tags:
         Name: "{{ item }}"
-      loop: "{{ instances }}"
-      register: ec2_instances_info
+    loop:
+    - db
+    - backend
+    - frontend
+    register: ec2_instances_info
   
   - name: print output
     ansible.builtin.debug:
@@ -29,4 +28,5 @@
 
 
   #- name: create Route53 records
-   # amazon.aws.route53:
+  #  amazon.aws.route53:
+       
