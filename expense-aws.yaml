@@ -25,11 +25,6 @@
   - name: print output
     ansible.builtin.debug:
       msg: "The Output : {{ ec2_instances_info }}"
-  
-  - name: To identify the varibale type
-    ansible.builtin.type_debug:
-      " {{ec2_instances_info|type_debug }}"
-
       
   # - name: create Route53 records
   #   amazon.aws.route53:
